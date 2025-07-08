@@ -1,50 +1,34 @@
-# DBMS_Project
-A relational database-backed system designed to streamline and manage core library operations including book lending, author tracking, librarian administration, and publisher management. This academic project demonstrates database design using ER modeling, normalization (1NF to 3NF), and schema conversion to support scalable, consistent data handling.
+# 📚 Library Management System
+
+This Library Management System is an academic project designed to demonstrate effective database design and implementation using ER diagrams, relational modeling, and normalization techniques. It supports essential library functions like managing books, tracking authors and publishers, issuing loans, and managing librarians and members.
 
 ---
 
-## 📁 Project Structure
+## ✅ Key Highlights
 
-Library-Management-System/
-├── ER Diagram & Conceptual Schema
-├── Database Normalization (1NF, 2NF, 3NF)
-├── Relational Schema Tables
-├── Application Source Code (Frontend & Backend)
-├── Documentation/
-│ ├── key milestone 2.docx.pdf.docx
-│ └── milestone2.docx
-└── README.md
-
-yaml
-Copy
-Edit
-
----
-
-## 🧩 Features
-
-- 📘 Manage a catalog of Books with Author relationships
-- 🧑‍🏫 Register and track Librarians
-- 👥 Manage Library Members
-- 📦 Link Books with Publishers
-- 🔁 Handle Book Borrowing and Loan Transactions
-- ✅ Fully normalized database schema in 3NF
-- 🔗 Supports many-to-many relationship (Book ↔ Author)
+- 📘 **Book Management:** Add, update, and manage book details.
+- 👤 **Author & Publisher Tracking:** Maintain data about book authors and publishers.
+- 👥 **Member Registration:** Manage member profiles and joining records.
+- 🧑‍💼 **Librarian Records:** Store and track librarian details.
+- 🔁 **Book Loans:** Issue and return books with due date tracking.
+- 🔗 **Many-to-Many Relationships:** Handled via `Book_Author` table.
+- 🎯 **Database Normalization:** Up to **Third Normal Form (3NF)**.
 
 ---
 
 ## 🧠 Database Design
 
-### 🗺️ ER Diagram Entities & Relationships
+### 🧾 ER Diagram
 
-- **Author** → Writes → **Book**
-- **Book** → Published By → **Publisher**
-- **Member** → Borrows via → **Loan**
-- **Loan** → Managed By → **Librarian**
+**Entities and Relationships**  
+- **Author** — *writes* → **Book**  
+- **Book** — *published by* → **Publisher**  
+- **Member** — *borrows (via Loan)* → **Book**  
+- **Loan** — *managed by* → **Librarian**
 
 ---
 
-### 🧾 Relational Schema (3NF)
+### 🗃️ Relational Schema (3NF)
 
 | Table         | Attributes                                                                 | Primary Key    | Foreign Keys                                                   |
 |---------------|----------------------------------------------------------------------------|----------------|-----------------------------------------------------------------|
@@ -58,44 +42,50 @@ Edit
 
 ---
 
-## 📐 Normalization Process
+## 🧮 Normalization Summary
 
-- **1NF:** All attributes are atomic.  
-- **2NF:** Eliminated partial dependencies using surrogate keys (e.g., `LoanID`).  
-- **3NF:** Removed transitive dependencies ensuring all non-key attributes depend solely on the primary key.
+- **1NF (First Normal Form):**  
+  All tables ensure atomic values and unique entries.  
+  ➤ *Example:* `Book_Author` resolves the many-to-many relationship between books and authors.
+
+- **2NF (Second Normal Form):**  
+  All partial dependencies are removed by using surrogate keys like `LoanID`.
+
+- **3NF (Third Normal Form):**  
+  All transitive dependencies are eliminated to reduce redundancy.  
+  ➤ *Example:* `Publisher` table includes only publisher-specific attributes.
 
 ---
 
-## 🚀 Getting Started
+## 🛠️ Project Files
 
-> *Instructions below are placeholders — please update based on your actual application framework (e.g., Flask, PHP, Node.js).*
+### 📂 Documentation
+- `key milestone 2.docx.pdf.docx` – Includes ER diagram, relational schema, and normalization details.
+- `milestone2.docx` – Duplicate support document.
 
-### Prerequisites
+### 📂 Source Code (ZIP)
+- Contains backend and/or frontend components for the Library Management System.
+- Application logic integrates with the normalized database schema.
+- Expected stack: likely web-based interface (HTML/CSS/PHP/Python) + SQL backend.
 
-- MySQL / PostgreSQL
-- Python / Node.js (depending on implementation)
-- Any modern browser for the frontend
+---
 
-### Steps
+##  Getting Started:
 
-1. Import the SQL schema into your database server.
-2. Configure database credentials in your application's config file.
-3. Start the backend server:
-   ```bash
-   python app.py     # for Flask
-   npm run dev       # for Node.js
-Open your browser and navigate to http://localhost:3000 or the specified port.
+1. **Database Setup**  
+   Import the relational schema into MySQL/PostgreSQL.
 
-📄 Documentation
-The following files include the schema design, normalization steps, and conceptual diagrams:
+2. **Configure Application**  
+   Update database credentials in the configuration file.
 
-key milestone 2.docx.pdf.docx
+3. **Run the App**  
+   Launch the backend server and access the UI in your browser.
 
-milestone2.docx
+---
 
-🧑‍💻 Authors
-Afaq Amjad
+## 👨‍💻 DONE BY
 
-Group Members: 2122, 2135, 2141
+- **Afaq Amjad, UMAR Iqbal, Ihasan Ullah**
+- **Group Members:** Roll Numbers `2135`, `2122`, `2141`  
+- **Affiliation:** Academic Project
 
-This project was created as part of an academic coursework milestone.
